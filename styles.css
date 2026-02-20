@@ -1,0 +1,63 @@
+.document {
+  background-color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  padding: 2px;
+}
+.links {
+  display: flex;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.linkbox {
+  display: flex;
+  background-color: rgb(206, 206, 206);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  :hover {
+    color: blue;
+    text-decoration: underline;
+  }
+}
+.title {
+  margin: 20px;
+}
+.titlebox {
+  background-color: rgb(206, 206, 206);
+  border-radius: 10px;
+  margin: 10px;
+}
+.game {
+  text-align: center;
+}
+.hmstates {
+  display: block;
+  margin: 0 auto;
+}
+.hmgametxt {
+  font-size: 64px;
+  margin-top: 10px;
+}
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.key {
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+}

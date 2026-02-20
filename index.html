@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="document">
+  <head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="titlebox"><h1 class="title">Hangman</h1></div>
+      <div class="links">
+        <div class="linkbox"><a class="link" href="#">4 letter</a></div>
+        <div class="linkbox"><a class="link" href="#">5 letter</a></div>
+        <div class="linkbox"><a class="link" href="#">6 letter</a></div>
+        <div class="linkbox"><a class="link" href="#">7 letter</a></div>
+      </div>
+    </nav>
+    <div class="game">
+      <img src="/hangman_states/Penjat_-_1.svg" id="hmstates" />
+      <p id="hmgametxt" class="hmgametxt"></p>
+      <p id="hmtxt" class="hmtxt"></p>
+      <form id="guessForm">
+        <input type="text" id="guess" name="guess" autocomplete="off" />
+        <input type="submit" value="Submit" />
+      </form>
+      <p id="guessedletters"></p>
+    </div>
+    <div id="keyboard" class="keyboard"></div>
+  </body>
+</html>
