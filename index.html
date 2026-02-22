@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="document">
   <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    
   </head>
   <body>
     <nav class="navbar">
@@ -15,7 +14,7 @@
       </div>
     </nav>
     <div class="game">
-      <img src="/hangman_states/Penjat_-_1.svg" id="hmstates" />
+      <img src="hangman-states/Penjat_-_1.svg" id="hmstate" />
       <p id="hmgametxt" class="hmgametxt"></p>
       <p id="hmtxt" class="hmtxt"></p>
       <form id="guessForm">
@@ -25,5 +24,13 @@
       <p id="guessedletters"></p>
     </div>
     <div id="keyboard" class="keyboard"></div>
+	<div id="winscreen" class="winscreen hidden">
+	  <h2></h2>
+	  <p id="winword" class="winword"></p>
+	  <p id="winscore" class="winscore"></p>
+	  <button id="playagain">Play Again</button>
+	</div>
+	<script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </body>
 </html>
