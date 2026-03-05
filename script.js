@@ -94,6 +94,10 @@ const keyboardEl = document.getElementById("keyboard");
 const easybot = document.getElementById("easybot");
 const medbot = document.getElementById("medbot");
 const hardbot = document.getElementById("hardbot");
+const winscreen = document.getElementById("winscreen");
+const winword = document.getElementById("winword");
+const winscore = document.getElementById("winscore");
+const playagain = document.getElementById("playagain");
 const keyboardLayout = [
   "QWERTYUIOP",
   "ASDFGHJKL",
@@ -192,25 +196,34 @@ function buildKeyboard() {
             hmstate.src = `hangman-states/Penjat_-_${amountwrong + 1}.svg`;
             text.textContent = "Incorrect guess.";
         }
-        
 
-        const gameover = display.every(([letter, revealed]) => revealed) || amountwrong >= 11;
-        if (gameover) {
-            showWinScreen();
+        if (display.every(([letter, revealed]) => revealed)) {
+            showWinScreen(1);
+        }
+        if (amountwrong >= 11) {
+            showWinScreen(0);
         }
     });
 };
 document.getElementById("playagain").addEventListener("click", resetGame);
 
-function showWinScreen() {
+function showWinScreen(isWin) {
     
     form.style.display = "none";
     keyboardEl.innerHTML = "";
-    document.getElementById("winscreen").classList.remove("hidden");
-    const winword = document.getElementById("winword");
+    winscreen.classList.remove("win", "lose");
+    playagain.classList.remove("win", "lose");
+    if (isWin) {
+        winscreen.classList.add("win");
+        playagain.classList.add("win");
+    } else {
+        winscreen.classList.add("lose");
+        playagain.classList.add("lose");
+    }
+    winscreen.classList.remove("hidden");
+    
     winword.textContent = `The word was: ${word.join("")}`;
-    const winscore = document.getElementById("winscore");
-    winscore.textContent = `Your score was: ${amountcorrect * 10 - amountwrong * 5}`;
+    winscore.textContent = `Your score was: ${Math.max(amountcorrect * 10 - amountwrong * 5, 0)}`;
 
 };
 function resetGame() {
